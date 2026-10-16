@@ -1,10 +1,49 @@
 <mvc:View controllerName="demo.myfirstapp.controller.myfirstapp"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
-    <Page title="{i18n>appTitle}">
-        <VBox class="sapUiSmallMargin">
-            <Input id="cakeInput" placeholder="{i18n>orderPlaceholder}"/>
-            <Button text="{i18n>orderButton}" press=".onOrderCake"/>
+
+    <Page id="mainPage" title="{i18n>appTitle}">
+        <VBox id="mainBox" class="sapUiSmallMargin">
+
+            <Input id="cakeInput"
+                   placeholder="{i18n>orderPlaceholder}"
+                   value="{/orderName}"
+                   valueLiveUpdate="true"/>
+
+            <Text id="orderEcho" text="{/orderName}"/>
+
+            <Button id="orderButton"
+                    text="{i18n>orderButton}"
+                    press=".onOrderCake"/>
+
+            <Table id="cakeTable"
+                   headerText="{i18n>cakeListHeader}"
+                   items="{/cakes}"
+                   class="sapUiSmallMarginTop">
+                <columns>
+                    <Column id="nameColumn">
+                        <Text id="nameHeader" text="{i18n>colName}"/>
+                    </Column>
+                    <Column id="priceColumn" hAlign="End">
+                        <Text id="priceHeader" text="{i18n>colPrice}"/>
+                    </Column>
+                    <Column id="stockColumn">
+                        <Text id="stockHeader" text="{i18n>colStock}"/>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem id="cakeRow">
+                        <cells>
+                            <Text id="cakeName" text="{name}"/>
+                            <ObjectNumber id="cakePrice" number="{price}" unit="ZAR"/>
+                            <ObjectStatus id="cakeStock"
+                                          text="{stock}"
+                                          state="{path: 'stock', formatter: '.formatter.stockState'}"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+
         </VBox>
     </Page>
 </mvc:View>
