@@ -1,0 +1,98 @@
+{
+  "_version": "1.89.0",
+  "sap.app": {
+    "id": "demo.myfirstapp",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.33.0",
+      "toolsId": "dda2c5bf-2d93-4a83-af30-cf317e660d1c"
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.153.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "demo.myfirstapp.i18n.i18n"
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "demo.myfirstapp.view",
+        "async": true,
+        "viewPath": "demo.myfirstapp.view"
+      },
+      "routes": [
+        {
+          "name": "Routemyfirstapp",
+          "pattern": ":?query:",
+          "target": [
+            "Targetmyfirstapp"
+          ]
+        }
+      ],
+      "targets": {
+        "Targetmyfirstapp": {
+          "id": "myfirstapp",
+          "name": "myfirstapp"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "demo.myfirstapp.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  }
+}

@@ -1,0 +1,10 @@
+<mvc:View controllerName="demo.myfirstapp.controller.myfirstapp"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page title="{i18n>appTitle}">
+        <VBox class="sapUiSmallMargin">
+            <Input id="cakeInput" placeholder="{i18n>orderPlaceholder}"/>
+            <Button text="{i18n>orderButton}" press=".onOrderCake"/>
+        </VBox>
+    </Page>
+</mvc:View>
