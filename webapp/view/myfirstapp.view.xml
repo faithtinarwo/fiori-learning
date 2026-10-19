@@ -32,7 +32,7 @@
                     </Column>
                 </columns>
                 <items>
-                    <ColumnListItem id="cakeRow">
+                    <ColumnListItem id="cakeRow" type="Navigation" press=".onCakePress">
                         <cells>
                             <Text id="cakeName" text="{name}"/>
                             <ObjectNumber id="cakePrice" number="{price}" unit="ZAR"/>

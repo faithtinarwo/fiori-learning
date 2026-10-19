@@ -69,22 +69,28 @@
         "type": "View",
         "viewType": "XML",
         "path": "demo.myfirstapp.view",
-        "async": true,
-        "viewPath": "demo.myfirstapp.view"
+        "async": true
       },
       "routes": [
         {
-          "name": "Routemyfirstapp",
-          "pattern": ":?query:",
-          "target": [
-            "Targetmyfirstapp"
-          ]
+          "name": "list",
+          "pattern": "",
+          "target": "list"
+        },
+        {
+          "name": "detail",
+          "pattern": "cake/{cakeId}",
+          "target": "detail"
         }
       ],
       "targets": {
-        "Targetmyfirstapp": {
-          "id": "myfirstapp",
-          "name": "myfirstapp"
+        "list": {
+          "name": "myfirstapp",
+          "id": "list"
+        },
+        "detail": {
+          "name": "CakeDetail",
+          "id": "detail"
         }
       }
     },

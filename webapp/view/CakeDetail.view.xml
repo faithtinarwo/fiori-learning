@@ -1,0 +1,17 @@
+<mvc:View controllerName="demo.myfirstapp.controller.CakeDetail"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+    <Page id="detailPage"
+          title="{i18n>detailTitle}"
+          showNavButton="true"
+          navButtonPress=".onNavBack">
+        <VBox id="detailBox" class="sapUiSmallMargin">
+            <Title id="detailName" text="{name}"/>
+            <ObjectNumber id="detailPrice" number="{price}" unit="ZAR"/>
+            <ObjectStatus id="detailStock"
+                          text="{stock}"
+                          state="{path: 'stock', formatter: '.formatter.stockState'}"/>
+        </VBox>
+    </Page>
+</mvc:View>
